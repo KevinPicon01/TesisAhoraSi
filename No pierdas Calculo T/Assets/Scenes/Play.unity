@@ -2699,6 +2699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sesion: 0
   nombre2: 
+  receta: 0
 --- !u!4 &548571850
 Transform:
   m_ObjectHideFlags: 0
@@ -3810,14 +3811,15 @@ MonoBehaviour:
   score: {fileID: 762248599}
   name: 
   seguro: 1
-  recetas:
-  - {fileID: 2089569274560544346, guid: 7eb6a2fbdee8d234898163ab2302d79b, type: 3}
-  - {fileID: 6294238405385352402, guid: eef0848f732c53942a567d92ee875195, type: 3}
-  - {fileID: 5636432235770743502, guid: 519a4d63952c5cb41b9baba3991a9c8f, type: 3}
+  recetaLimites:
+  - {fileID: 0}
+  recetaFunciones: []
+  recetaDerivadas: []
   nombre: {fileID: 689716028}
   pasosCal: {fileID: 1139866445}
   Sesion: 0
   nombreS: 
+  receta: 0
 --- !u!1 &784061427
 GameObject:
   m_ObjectHideFlags: 0

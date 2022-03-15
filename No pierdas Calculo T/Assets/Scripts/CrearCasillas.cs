@@ -31,40 +31,42 @@ public class CrearCasillas : MonoBehaviour
     public web score;
     public string name;
     public bool seguro = true;
-    [Header("Recetas")]
-
-    [SerializeField] private List<GameObject> recetas;
-
+    [Header("Recetas")] 
+    [SerializeField] private List<GameObject> recetaLimites;
+    [SerializeField] private List<GameObject> recetaFunciones;
+    [SerializeField] private List<GameObject> recetaDerivadas;
     [SerializeField] private TMP_Text nombre;
-   
+    public List<List<GameObject>> recetasCompletas;
+    
     [SerializeField] private TMP_Text pasosCal;
     private int recetaActual;
     
     
    
     
-    
+    [Header("Sesion")]
     
     private SesionManager mySesionManager;
     public bool Sesion;
     public string nombreS;
+    public int receta;
 
     
     public void GenerarReceta()
     {
         Random rand = new Random();
-        var x = rand.Next(0, recetas.Count);
+        var x = rand.Next(0, recetasCompletas[receta].Count);
         recetaActual = x;
 
 
         
-        nombre.text = recetas[x].GetComponent<Recetas>().nombre;
+        nombre.text = recetasCompletas[receta][x].GetComponent<Recetas>().nombre;
         
         var cal = "";
         
         for (int i = 0; i < 4; i++)
         {
-            cal += recetas[x].GetComponent<Recetas>().pasosCal[i]+ " " + recetas[x].GetComponent<Recetas>().pasosRec[i]+"\n";
+            cal += recetasCompletas[receta][x].GetComponent<Recetas>().pasosCal[i]+ " " + recetasCompletas[receta][x].GetComponent<Recetas>().pasosRec[i]+"\n";
             
         }
 
@@ -146,8 +148,11 @@ public class CrearCasillas : MonoBehaviour
         mySesionManager = FindObjectOfType<SesionManager>();
         this.Sesion = mySesionManager.Sesion;
         this.nombreS = mySesionManager.nombre2;
-
-
+        receta = mySesionManager.receta;
+        recetasCompletas.Add(recetaDerivadas);
+        recetasCompletas.Add(recetaLimites);
+        recetasCompletas.Add(recetaFunciones);
+        
         Debug.Log(nombreS);
         
         
@@ -216,7 +221,7 @@ public class CrearCasillas : MonoBehaviour
         var sg = gm.GetComponent<Transform>().localScale.z;
 
 
-       var e = recetas[recetaActual].GetComponent<Recetas>().numeros[progreso];
+       var e = recetasCompletas[receta][recetaActual].GetComponent<Recetas>().numeros[progreso];
         
         if (pr==sg && pr==e)
         {

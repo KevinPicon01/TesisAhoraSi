@@ -11,8 +11,11 @@ public class Levels : MonoBehaviour
     public List<GameObject> nivelesC;
     private int tmp = 0;
 
+    public SesionManager mySesionManager;
+
     private void Start()
     {
+        mySesionManager = FindObjectOfType<SesionManager>();
         nivelesC.Add(mar);
         nivelesC.Add(mex);
         nivelesC.Add(postres);
@@ -36,6 +39,7 @@ public class Levels : MonoBehaviour
 
     public void Ranked()
     {
+        mySesionManager.receta = tmp;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Play");
     }
 

@@ -9,6 +9,7 @@ public class SesionManager : MonoBehaviour
     public bool Sesion;
     public static SesionManager inst;
     public string nombre2;
+    public int receta;
     
     private void Awake()
     {
