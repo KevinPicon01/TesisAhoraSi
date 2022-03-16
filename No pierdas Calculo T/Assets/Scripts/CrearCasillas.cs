@@ -36,7 +36,7 @@ public class CrearCasillas : MonoBehaviour
     [SerializeField] private List<GameObject> recetaFunciones;
     [SerializeField] private List<GameObject> recetaDerivadas;
     [SerializeField] private TMP_Text nombre;
-    public List<List<GameObject>> recetasCompletas;
+    public List<List<GameObject>> recetasCompletas = new List<List<GameObject>>();
     
     [SerializeField] private TMP_Text pasosCal;
     private int recetaActual;
@@ -149,8 +149,9 @@ public class CrearCasillas : MonoBehaviour
         this.Sesion = mySesionManager.Sesion;
         this.nombreS = mySesionManager.nombre2;
         receta = mySesionManager.receta;
-        recetasCompletas.Add(recetaDerivadas);
+        
         recetasCompletas.Add(recetaLimites);
+        recetasCompletas.Add(recetaDerivadas);
         recetasCompletas.Add(recetaFunciones);
         
         Debug.Log(nombreS);
@@ -166,8 +167,12 @@ public class CrearCasillas : MonoBehaviour
     }
 
 
-    
-    
+    public void volverInicio()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Start");
+    }
+
+
     private void LlenarNumeros()
     {
         for (int i = 0; i < 25; i++)

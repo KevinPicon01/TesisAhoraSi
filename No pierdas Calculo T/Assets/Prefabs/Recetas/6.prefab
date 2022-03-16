@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6294238405385352402
+--- !u!1 &8721619414689201264
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8715332987943726514}
-  - component: {fileID: 2837558059676320735}
+  - component: {fileID: 8721619414689201262}
+  - component: {fileID: 8721619414689201263}
   m_Layer: 0
-  m_Name: 2
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8715332987943726514
+--- !u!4 &8721619414689201262
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6294238405385352402}
+  m_GameObject: {fileID: 8721619414689201264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.47540557, y: 3.1475577, z: 111.2282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2837558059676320735
+--- !u!114 &8721619414689201263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6294238405385352402}
+  m_GameObject: {fileID: 8721619414689201264}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90231bd156acfb44cb01eda4f0b33943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombre: Hamburguesa Limitante
+  nombre: Postre de funciones
   pasosCal:
-  - Evaluar
-  - Factorizar
-  - Reescribir
-  - Simplificar
+  - Analizar
+  - Reemplazar
+  - Calcular
+  - Graficar
   pasosRec:
-  - el queso
-  - un pan
-  - el aceite
-  - la carne
-  numeros: 0900000004000000140000000c000000
+  - los bananos
+  - la mantequilla
+  - las cerezas
+  - con chocolate
+  numeros: 01000000060000000a0000000b000000
