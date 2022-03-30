@@ -2698,6 +2698,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dailyReward: {fileID: 1934745762}
   _ranking: {fileID: 1937117117}
+  Sesion: 0
+  nombreS: 
+  noReward: {fileID: 1754833822}
 --- !u!1 &1548228769
 GameObject:
   m_ObjectHideFlags: 0
@@ -3020,8 +3023,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 15}
-  m_SizeDelta: {x: 769.57, y: 549.96}
+  m_AnchoredPosition: {x: -2.47, y: 15}
+  m_SizeDelta: {x: 617.28, y: 549.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668706242
 MonoBehaviour:
@@ -3070,8 +3073,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 106.3
-  m_fontSizeBase: 106.3
+  m_fontSize: 79.57
+  m_fontSizeBase: 79.57
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3106,7 +3109,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -3.1105194, y: 0, z: -18.153687, w: -5.5081177}
+  m_margin: {x: 11.562454, y: 0, z: 1.4790956, w: -5.5081177}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3234,8 +3237,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.659851, y: -43.88501}
-  m_SizeDelta: {x: -136.5, y: -356.76}
+  m_AnchoredPosition: {x: 0, y: -64.5}
+  m_SizeDelta: {x: 57.44, y: -373.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754833824
 MonoBehaviour:
@@ -3500,7 +3503,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1451115425}
         m_TargetAssemblyTypeName: DailyReward, Assembly-CSharp
-        m_MethodName: OnButtonClose
+        m_MethodName: RewardClaim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

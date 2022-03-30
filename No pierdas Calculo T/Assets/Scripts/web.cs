@@ -10,7 +10,8 @@ public class web : MonoBehaviour
 {
     public Transform tabla;
     public GameObject plantillaRegistros;
-
+    string url = "http://66.94.101.162:8888";
+        //"http://localhost/Game";
     public int miPuntaje;
     public string miNombre;
     public DateTime dateTime;
@@ -48,7 +49,7 @@ public class web : MonoBehaviour
    
     private IEnumerator CorrutinaLeerJson(System.Action empLeer)
     {
-        UnityWebRequest web =  UnityWebRequest.Get("http://66.94.101.162:8888/RankingNPCJson.txt");
+        UnityWebRequest web =  UnityWebRequest.Get(url+"/RankingNPCJson.txt");
         yield return web.SendWebRequest();
         if (!web.isNetworkError && !web.isHttpError)
         {
@@ -69,7 +70,7 @@ public class web : MonoBehaviour
         form.AddField("archivo","RankingNPCJson");
         form.AddField("texto", JsonUtility.ToJson(datos));
         
-        UnityWebRequest web =  UnityWebRequest.Post("http://66.94.101.162:8888/EscribirDatos.php",form);
+        UnityWebRequest web =  UnityWebRequest.Post(url+"/EscribirDatos.php",form);
         yield return web.SendWebRequest();
         if (!web.isNetworkError && !web.isHttpError)
         {

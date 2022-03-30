@@ -37,7 +37,7 @@ public class SceneManager : MonoBehaviour
         m_networkManager = GameObject.FindObjectOfType<NetworkManager>();
         
     }
-    public void SubmitLogin()
+    public async void SubmitLogin()
     {
         
         if ( m_userNameInputLogin.text == "" || m_passwordInputLogin.text == "")
@@ -47,21 +47,9 @@ public class SceneManager : MonoBehaviour
         }
         
         m_Text.text = "Procesando...";
-        m_networkManager.CheckUser(m_userNameInputLogin.text, m_passwordInputLogin.text,
-            delegate(Response response1)
-            {
-                m_Text.text = response1.message;
-                if (response1.done)
-                {
-
-
-                    
-                    mySesion.nombre2 = m_userNameInputLogin.text;
-                    UnityEngine.SceneManagement.SceneManager.LoadScene("Start");
-                }
-
-                
-            });
+        m_networkManager.CheckUser(m_userNameInputLogin.text, m_passwordInputLogin.text);
+        
+        
         
         
         

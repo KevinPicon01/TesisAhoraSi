@@ -2151,6 +2151,7 @@ MonoBehaviour:
   Sesion: 0
   nombre2: 
   receta: 0
+  url: 
 --- !u!4 &866383929
 Transform:
   m_ObjectHideFlags: 0
@@ -2195,6 +2196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959f1dd19dc804b46902bb3cc13c572a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _text: {fileID: 1157813627}
+  entro: 0
+  mensaje: 
+  Sesion: 0
+  nombreS: 
 --- !u!4 &882427282
 Transform:
   m_ObjectHideFlags: 0
@@ -3470,7 +3476,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1393}
+  m_AnchoredPosition: {x: 0, y: -1403}
   m_SizeDelta: {x: 744.66, y: 239.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1157813627

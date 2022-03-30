@@ -9,15 +9,4 @@ public class Recetas : MonoBehaviour
     [SerializeField] public string[] pasosRec;
     [SerializeField] public int[] numeros;
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

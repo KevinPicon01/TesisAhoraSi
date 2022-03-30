@@ -10,7 +10,7 @@ public class SesionManager : MonoBehaviour
     public static SesionManager inst;
     public string nombre2;
     public int receta;
-    
+    public string url;
     private void Awake()
     {
         if (SesionManager.inst == null)

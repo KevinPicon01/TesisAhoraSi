@@ -20,35 +20,25 @@ public class Carta : MonoBehaviour
     public GameObject gm;
     private GameObject[] crearCasillas;
 
-    
+    string url = "http://66.94.101.162:8888";
+        //"http://localhost/Game";
     
 
     private void Update()
     {
         deltadobleClick += Time.deltaTime;
-       
     }
-
-    
-    
     private void Seleccionado()
     {
-
-
-
         came = GameObject.Find("Main Camera");
-        
         if (came.GetComponent<CrearCasillas>().lugar < 1)
         {
             came.GetComponent<CrearCasillas>().lugar = 2;
             gm = GameObject.Find("PrimerObjeto");
             gm.GetComponent<SpriteRenderer>().sprite = textura;
             gm.GetComponent<Transform>().localScale = new Vector3(0.6f, 0.6f, numCasilla);
-            
             crearCasillas = GameObject.FindGameObjectsWithTag("MainCamera");
             crearCasillas[0].GetComponent<CrearCasillas>().CrearImg();
-
-
         }
         else
         {
@@ -56,45 +46,16 @@ public class Carta : MonoBehaviour
             gm.GetComponent<SpriteRenderer>().sprite = textura;
             gm.GetComponent<Transform>().localScale = new Vector3(0.6f, 0.6f, numCasilla);
             came.GetComponent<CrearCasillas>().lugar = 0;
-            
         }
-
-        
-       
-        
-           
-        
-       
     }
-   /* public void OnMouseDown()
-    {
-       
-        if (deltadobleClick <= dobleclickdelay)
-        {
-            
-            Seleccionado();
-
-        }
-        else
-        {
-            deltadobleClick = 0;
-            PonerImagen();
-        }
-        
-        
-    }*/
-
     public void sirva()
     {
-        Debug.Log("holax1");
         if (deltadobleClick <= dobleclickdelay)
         {
-            Debug.Log("holax2");
             Seleccionado();
-
         }
         else
-        {Debug.Log("holax3");
+        {
             deltadobleClick = 0;
             PonerImagen();
         }
@@ -104,23 +65,17 @@ public class Carta : MonoBehaviour
     {
         GetComponent<Image>().sprite = cuadrado;
         textura = imagen;
-
     }
 
     public void VoltearCara()
     {
         GetComponent<Image>().sprite = cuadrado;
-
     }
 
     public void PonerImagen()
     {
-
-        Debug.Log("holax5");
         GetComponent<Image>().sprite= textura;
         Invoke("VoltearCara", tiempoDelay);
-        
-
     }
 
 

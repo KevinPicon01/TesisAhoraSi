@@ -717,7 +717,8 @@ MonoBehaviour:
   mex: {fileID: 85289988}
   postres: {fileID: 2135516193}
   nivelesC: []
-  mySesionManager: {fileID: 0}
+  Sesion: 0
+  nombreS: 
 --- !u!1 &480162809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1455,7 @@ MonoBehaviour:
   Sesion: 0
   nombre2: 
   receta: 0
+  url: 
 --- !u!4 &880310407
 Transform:
   m_ObjectHideFlags: 0
