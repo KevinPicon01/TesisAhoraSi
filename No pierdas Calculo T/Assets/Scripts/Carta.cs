@@ -20,7 +20,7 @@ public class Carta : MonoBehaviour
     public GameObject gm;
     private GameObject[] crearCasillas;
 
-    string url = "http://66.94.101.162:8888";
+    string url = "http://66.94.101.162:8888/";
         //"http://localhost/Game";
     
 

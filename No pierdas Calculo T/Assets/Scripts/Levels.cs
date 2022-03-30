@@ -17,7 +17,7 @@ public class Levels : MonoBehaviour
     private SesionManager mySesionManager;
     public bool Sesion;
     public string nombreS; 
-    string url = "http://66.94.101.162:8888";
+    string url = "http://66.94.101.162:8888/";
         //"http://localhost/Game";
     private void Start()
     {
@@ -77,8 +77,6 @@ public class Levels : MonoBehaviour
     {
         
         var form = new WWWForm();
-        Debug.Log(nombreS);
-        Debug.Log(modo);
         form.AddField("userName", nombreS);
         form.AddField("modo", modo);
         var www = UnityWebRequest.Post(url+"/ContadorJuegos.php", form);
@@ -92,5 +90,8 @@ public class Levels : MonoBehaviour
         {
             Debug.Log("Form upload complete!");
         }
+    }
+    public void Back(){
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Start");
     }
 }

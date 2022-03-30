@@ -12,7 +12,7 @@ using Random = System.Random;
 
 public class CrearCasillas : MonoBehaviour
 {
-    string url = "http://66.94.101.162:8888";
+    string url = "http://66.94.101.162:8888/";
         //"http://localhost/Game";
     [SerializeField] private GameObject _ranking;
     public GameObject cartaPrefab;

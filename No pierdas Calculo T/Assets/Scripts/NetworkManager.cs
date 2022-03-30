@@ -7,8 +7,8 @@ using UnityEngine.Networking;
 
 public class NetworkManager : MonoBehaviour
 {
-   string url = //"http://66.94.101.162:8888";
-                  "http://localhost/Game";
+   string url = "http://66.94.101.162:8888/";
+                  //"http://localhost/Game";
 
    [SerializeField] private TMP_Text _text;
     public bool entro=false;

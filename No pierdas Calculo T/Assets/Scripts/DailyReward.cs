@@ -8,8 +8,8 @@ using UnityEngine.Networking;
 
 public class DailyReward : MonoBehaviour
 {
-    string url = //"http://66.94.101.162:8888";
-                  "http://localhost/game";
+    string url ="http://66.94.101.162:8888/";
+                  //"http://localhost/game";
     
     [SerializeField] private GameObject _dailyReward;
     [SerializeField] private GameObject _ranking;
@@ -70,8 +70,9 @@ public class DailyReward : MonoBehaviour
         yield return www.SendWebRequest();
         
         var temp = www.downloadHandler.text;
-        var dates = JsonUtility.FromJson<RecibirDailyReward>(temp);
         Debug.Log(temp);
+        var dates = JsonUtility.FromJson<RecibirDailyReward>(temp);
+        
         dailyReward = dates.dailyReward;
         noReward.SetActive(!dailyReward);
     }

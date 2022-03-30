@@ -10,7 +10,7 @@ public class web : MonoBehaviour
 {
     public Transform tabla;
     public GameObject plantillaRegistros;
-    string url = "http://66.94.101.162:8888";
+    string url = "http://66.94.101.162:8888/";
         //"http://localhost/Game";
     public int miPuntaje;
     public string miNombre;
