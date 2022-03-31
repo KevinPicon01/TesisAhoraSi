@@ -51,10 +51,13 @@ public class NetworkManager : MonoBehaviour
         {
             var x = JsonUtility.FromJson<Response>(www.downloadHandler.text);
             Debug.Log(www.downloadHandler.text);
-            if (x.done)
+            
+            if (x.message == "Usuario creado correctamente")
             {
-                sceneManag.GetComponent<SceneManager>().m_Text.text = www.downloadHandler.text;
+                sceneManag.GetComponent<SceneManager>().m_Text.text = "Usuario creado correctamente";
+                sceneManag.GetComponent<SceneManager>().m_Text.color = Color.green;
                 sceneManag.GetComponent<SceneManager>().ShowLogin();
+                
             }
             else
             {
@@ -75,7 +78,7 @@ public class NetworkManager : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("userName", userName);
         form.AddField("pass", pass);
-        var w = UnityWebRequest.Post(url+"/checkUser.php", form);
+        var w = UnityWebRequest.Post(url+"CheckUser.php", form);
         yield return w.SendWebRequest();
         var tmp = w.downloadHandler.text;
         Debug.Log(tmp);

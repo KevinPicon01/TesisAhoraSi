@@ -58,7 +58,7 @@ public class DailyReward : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("userName", nombreS);
-        var www = UnityWebRequest.Post(url+"/ActualizarDaily.php", form);
+        var www = UnityWebRequest.Post(url+"ActualizarDaily.php", form);
         yield return www.SendWebRequest();
         noReward.SetActive(true);
     }
@@ -66,7 +66,7 @@ public class DailyReward : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("userName", nombreS);
-        var www = UnityWebRequest.Post(url+"/ConsultaDaily.php", form);
+        var www = UnityWebRequest.Post(url+"ConsultaDaily.php", form);
         yield return www.SendWebRequest();
         
         var temp = www.downloadHandler.text;
