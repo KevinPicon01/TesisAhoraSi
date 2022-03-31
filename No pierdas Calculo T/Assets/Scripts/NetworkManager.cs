@@ -8,9 +8,9 @@ using UnityEngine.Networking;
 public class NetworkManager : MonoBehaviour
 {
    string url = "http://66.94.101.162:8888/";
-                  //"http://localhost/Game";
+                  //"http://localhost/Game/";
 
-   [SerializeField] private TMP_Text _text;
+    [SerializeField] private GameObject sceneManag;
     public bool entro=false;
     public string mensaje;
     [Header("Sesion")]
@@ -26,27 +26,44 @@ public class NetworkManager : MonoBehaviour
        // url = mySesionManager.url;
         
     }
-    public void CreateUser(string userName, string email, string pass, Action<Response> response)
+    public void CreateUser(string userName, string email, string pass, string name , string lastName, string doc) 
     {
-        StartCoroutine(Cd_createUser(userName, email, pass, response));
+        StartCoroutine(Cd_createUser(userName, email, pass, name, lastName, doc));
     }
 
-    private IEnumerator Cd_createUser(string userName, string email, string pass, Action<Response> response)
+    private IEnumerator Cd_createUser(string userName, string email, string pass, string name, string lastName, string doc)
     {
         WWWForm form = new WWWForm();
         form.AddField("userName", userName);
         form.AddField("email", email);
         form.AddField("pass", pass);
-
-        WWW w = new WWW(url+"/createUser.php", form);
-
-        yield return w;
-
-        Debug.Log(w.text);
-        
-        
-            response(JsonUtility.FromJson<Response>(w.text));
+        form.AddField("name", name);
+        form.AddField("lastName", lastName);
+        form.AddField("doc", doc);
+       
+        UnityWebRequest www = UnityWebRequest.Post(url + "createUser.php", form);
+        yield return www.SendWebRequest();
+        if (www.isNetworkError || www.isHttpError)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            var x = JsonUtility.FromJson<Response>(www.downloadHandler.text);
+            Debug.Log(www.downloadHandler.text);
+            if (x.done)
+            {
+                sceneManag.GetComponent<SceneManager>().m_Text.text = www.downloadHandler.text;
+                sceneManag.GetComponent<SceneManager>().ShowLogin();
+            }
+            else
+            {
+                sceneManag.GetComponent<SceneManager>().m_Text.text = x.message;
+            }
+            
+        }
     }
+        
 
     public void CheckUser(string userName, string pass)
     {
@@ -58,7 +75,7 @@ public class NetworkManager : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("userName", userName);
         form.AddField("pass", pass);
-        var w = UnityWebRequest.Post(url+"/CheckUser.php", form);
+        var w = UnityWebRequest.Post(url+"/checkUser.php", form);
         yield return w.SendWebRequest();
         var tmp = w.downloadHandler.text;
         Debug.Log(tmp);
@@ -68,7 +85,7 @@ public class NetworkManager : MonoBehaviour
 
         if (!entro)
         {
-            _text.text = mensaje;
+            sceneManag.GetComponent<SceneManager>().m_Text.text = mensaje;
         }
         else
         {

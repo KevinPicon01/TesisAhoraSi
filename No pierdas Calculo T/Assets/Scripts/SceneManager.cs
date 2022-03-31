@@ -19,12 +19,15 @@ public class SceneManager : MonoBehaviour
     [Header("Register")]
     
     [SerializeField] private TMP_InputField m_userNameInput      = null;
+    [SerializeField] private TMP_InputField m_NameInput      = null;
+    [SerializeField] private TMP_InputField m_LastNameInput      = null;
+    [SerializeField] private TMP_InputField m_DocInput      = null;
     [SerializeField] private TMP_InputField m_userEmailInput     = null;
     [SerializeField] private TMP_InputField m_userPassInput      = null;
     [SerializeField] private TMP_InputField m_userPassConfInput  = null;
-    [SerializeField] private TMP_Text m_Text                     = null;
-    [SerializeField] private GameObject m_registerUI            = null;
-    [SerializeField] private GameObject m_loginUI            = null;
+    [SerializeField] public TMP_Text m_Text                     = null;
+    [SerializeField] public GameObject m_registerUI            = null;
+    [SerializeField] public GameObject m_loginUI            = null;
 
     [Header("Singleton")] 
     
@@ -66,28 +69,18 @@ public class SceneManager : MonoBehaviour
     }
     public void SubmitRegister()
     {
-        if (m_userEmailInput.text == "" || m_userNameInput.text == "" || m_userPassInput.text == "")
+        if (m_userEmailInput.text == "" || m_userNameInput.text == "" || m_userPassInput.text == "" || m_userPassConfInput.text == "" || m_NameInput.text == "" || m_LastNameInput.text == "" || m_DocInput.text == "")
         {
             m_Text.text = "Por favor llena todos los campos";
             return;
         }
-        
-            
-        if (m_userPassInput.text == m_userPassConfInput.text)
+        if (m_userPassInput.text != m_userPassConfInput.text)
         {
-                m_Text.text = "Procesando...";
-            
-                m_networkManager.CreateUser(m_userNameInput.text, m_userEmailInput.text, m_userPassInput.text,
-                    delegate(Response response)
-                    {
-                        m_Text.text = response.message;
-                    });
+            m_Text.text = "Las contraseñas no coinciden";
+            return;
         }
-        else
-        {
-                m_Text.text = "Las contraseñas no son iguales";
-        }
-            
+        m_Text.text = "Procesando...";
+        m_networkManager.CreateUser(m_userNameInput.text, m_userEmailInput.text, m_userPassInput.text,m_NameInput.text, m_LastNameInput.text, m_DocInput.text);
 
     }
     
