@@ -79,7 +79,7 @@ public class Levels : MonoBehaviour
         var form = new WWWForm();
         form.AddField("userName", nombreS);
         form.AddField("modo", modo);
-        var www = UnityWebRequest.Post(url+"/ContadorJuegos.php", form);
+        var www = UnityWebRequest.Post(url+"ContadorJuegos.php", form);
         yield return www.SendWebRequest();
         Debug.Log(www.downloadHandler.text);
         if (www.isNetworkError || www.isHttpError)

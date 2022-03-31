@@ -49,7 +49,7 @@ public class web : MonoBehaviour
    
     private IEnumerator CorrutinaLeerJson(System.Action empLeer)
     {
-        UnityWebRequest web =  UnityWebRequest.Get(url+"/RankingNPCJson.txt");
+        UnityWebRequest web =  UnityWebRequest.Get(url+"RankingNPCJson.txt");
         yield return web.SendWebRequest();
         if (!web.isNetworkError && !web.isHttpError)
         {
@@ -69,8 +69,8 @@ public class web : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("archivo","RankingNPCJson");
         form.AddField("texto", JsonUtility.ToJson(datos));
-        
-        UnityWebRequest web =  UnityWebRequest.Post(url+"/EscribirDatos.php",form);
+        Debug.Log(JsonUtility.ToJson(datos));
+        UnityWebRequest web =  UnityWebRequest.Post(url+"EscribirDatos.php",form);
         yield return web.SendWebRequest();
         if (!web.isNetworkError && !web.isHttpError)
         {
@@ -79,6 +79,7 @@ public class web : MonoBehaviour
         else
         {
             Debug.LogWarning(("Hubo un problema en el servidor"));
+            
         }
 
 
@@ -128,7 +129,7 @@ public class web : MonoBehaviour
         }
     }
 
-    void crearTablaPasarDatosYChequear()
+    void CrearTablaPasarDatosYChequear()
     {
         CrearTabla();
         pasarDatosTabla();
@@ -137,7 +138,8 @@ public class web : MonoBehaviour
 
     private void Start()
     {
-        LeerJson(crearTablaPasarDatosYChequear);
+        
+        LeerJson(CrearTablaPasarDatosYChequear);
         
     }
 

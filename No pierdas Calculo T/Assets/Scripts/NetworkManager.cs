@@ -52,7 +52,7 @@ public class NetworkManager : MonoBehaviour
             var x = JsonUtility.FromJson<Response>(www.downloadHandler.text);
             Debug.Log(www.downloadHandler.text);
             
-            if (x.message == "Usuario creado correctamente")
+            if (x.done)
             {
                 sceneManag.GetComponent<SceneManager>().m_Text.text = "Usuario creado correctamente";
                 sceneManag.GetComponent<SceneManager>().m_Text.color = Color.green;
