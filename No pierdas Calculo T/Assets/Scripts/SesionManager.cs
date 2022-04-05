@@ -19,10 +19,8 @@ public class SesionManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else{
-        Destroy(gameObject);
+            Destroy(gameObject);
         }
-        
-        
     }
 
 }
